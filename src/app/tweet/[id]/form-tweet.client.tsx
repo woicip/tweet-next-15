@@ -18,7 +18,7 @@ export function FormTweet({ fetchTweet }: { fetchTweet: Promise<TweetData> }) {
   }, [tweet]);
 
   return (
-    <form action={action} className="w-full">
+    <form action={action} className="w-full h-screen">
       <div className="px-[20px] py-[28px] border-b border-white/20">
         <h1 className="text-2xl font-semibold text-white">Create Tweet</h1>
       </div>
@@ -27,10 +27,7 @@ export function FormTweet({ fetchTweet }: { fetchTweet: Promise<TweetData> }) {
         <div className="py-[10px] px-[20px]">
           <div className="flex items-center gap-[10px]">
             <div className="w-[40px] h-[40px] bg-white/20 rounded-full overflow-hidden">
-              <img
-                src={config.AVATAR}
-                alt="avatar"
-              />
+              <img src={config.AVATAR} alt="avatar" />
             </div>
             <p className="font-semibold">Wvoyak Akne</p>
           </div>

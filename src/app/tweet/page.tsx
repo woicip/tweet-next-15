@@ -8,7 +8,7 @@ export default function TweetPage() {
   const [_, action] = useActionState(postTweet, null);
 
   return (
-    <form action={action} className="w-full">
+    <form action={action} className="w-full h-screen">
       <div className="px-[20px] py-[28px] border-b border-white/20">
         <h1 className="text-2xl font-semibold text-white">Create Tweet</h1>
       </div>
