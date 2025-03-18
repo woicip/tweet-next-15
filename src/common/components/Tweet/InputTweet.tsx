@@ -12,10 +12,15 @@ export default function InputTweet(props: DetailedHTMLProps<TextareaHTMLAttribut
     return height
   }
 
-  const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+  const onLocalInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     const height = calcHeight(e.target.value);
     e.target.style.height = `${height}px`
   };
+
+  useEffect(() => {
+    const height = calcHeight(String(props.value))
+    inputRef.current.style.height = `${height}px`
+  }, [props.value])
 
   useEffect(() => {
     inputRef.current?.focus();
@@ -24,7 +29,7 @@ export default function InputTweet(props: DetailedHTMLProps<TextareaHTMLAttribut
   return (
     <textarea
       ref={inputRef}
-      onChange={onChange}
+      onInput={onLocalInput}
       className={classNames(
         "w-full h-[80px] py-[10px] px-[20px] leading-6 flex items-start text-xl focus:outline-none border-b border-white/20 resize-none"
       )}
